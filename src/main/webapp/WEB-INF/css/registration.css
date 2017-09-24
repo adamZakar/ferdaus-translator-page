@@ -1,0 +1,248 @@
+﻿body {
+    background-image: url("/resources/images/background.jpg");
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.logoDiv {
+    background-color: black;
+    text-align: center;
+}
+
+.logoDivPic img {
+    padding-left: 0;
+    height: 60px;
+}
+
+.logoDivPic {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+}
+#submit.success{
+    background-color:green;
+        box-shadow: 5px 5px 7px #d7d2d2;
+}
+
+#submit:hover{
+    background-color:green;
+}
+
+h1 {
+    display: inline-block;
+    color: #ededed;
+    margin: 0;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 0;
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
+}
+
+#outerdiv {
+    background-color: rgba(255,221,0,1);
+    padding-top: 50px;
+    width: 450px;
+    padding: 20px;
+    margin: 20px auto;
+    height: 370px;
+    border-radius: 30px;
+}
+
+    #outerdiv form {
+        padding-top: 40px;
+    }
+
+.textinput {
+    width: 50%;
+    border-radius: 30px;
+    margin: 5px auto;
+    padding: 2px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    width: 300px;
+    outline:none;
+}
+
+.emailinput {
+    width: 23%;
+    border-radius: 30px;
+    margin: 5px auto;
+    padding: 2px;
+        outline:none;
+}
+
+#firstEmail {
+    border-radius: 30px;
+    padding: 2px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    width: 135px;
+        outline:none;
+}
+
+#lastEmail {
+    border-radius: 30px;
+    padding: 2px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    width: 135px;
+        outline:none;
+}
+
+.emailinput input {
+    padding: 5px;
+}
+
+#submit {
+    margin-top: 10px;
+    width: 250px;
+    border-radius: 10px;
+    height: 30px;
+    background-color: black;
+    color: #ededed;
+    letter-spacing: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 5px 5px 7px #808080;
+    font-family: 'Caveat Brush', cursive;
+}
+
+#outerdiv select {
+    padding: 2px;
+    margin: 5px auto;
+    border-radius: 30px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    width: 310px;
+    height: 30px;
+            outline:none;
+}
+
+
+.textinput:focus {
+    background-color: #d7d2d2;
+    border-radius: 30px;
+    border-color: transparent;
+}
+
+label {
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.error {
+    background-color: orangered;
+}
+
+    .error option {
+        background-color: white;
+    }
+
+    .error ~ label {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+
+
+@media screen and (max-width: 480px) {
+    #outerdiv {
+        width: 80%;
+        height: 410px;
+        font-size: 22px;
+    }
+
+    .textinput {
+        font-size: 22px;
+    }
+
+    #firstEmail {
+        font-size: 20px;
+        width: 129px;
+    }
+
+    #lastEmail {
+        font-size: 20px;
+        width: 129px;
+    }
+
+    #outerdiv {
+        margin: 20px auto;
+    }
+
+    .logoDivPic img {
+        width: 200px;
+    }
+
+    #outerdiv form {
+        padding-top: 10px;
+    }
+
+    #outerdiv select {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    #outerdiv {
+        width: 80%;
+        height: 440px;
+        font-size: 22px;
+        margin-top: 10px;
+        padding-bottom: 28px;
+    }
+
+    .textinput {
+        font-size: 22px;
+        width: 80%;
+        margin: 5px;
+    }
+
+    #firstEmail {
+        font-size: 20px;
+        width: 80%;
+        display: block;
+        margin: 5px auto;
+    }
+
+    #lastEmail {
+        font-size: 20px;
+        width: 80%;
+        margin: 5px auto;
+        display: block;
+    }
+
+    .logoDivPic img {
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    #outerdiv form {
+        padding-top: 0px;
+    }
+
+    #outerdiv select {
+        font-size: 20px;
+        text-align: center;
+        width: 80%;
+    }
+
+    #submit {
+        font-size: 20px;
+        width: 80%;
+            letter-spacing: 3px;
+    }
+
+    #submitdiv {
+        height: 40px;
+    }
+}
