@@ -1,0 +1,11 @@
+com\adam\zakar\ferdaustranslatorpage\service\ContactServiceImpl.class
+com\adam\zakar\ferdaustranslatorpage\service\InquiryServiceImpl.class
+com\adam\zakar\ferdaustranslatorpage\service\InquiryService.class
+com\adam\zakar\ferdaustranslatorpage\service\ContactService.class
+com\adam\zakar\ferdaustranslatorpage\service\ContactParser.class
+com\adam\zakar\ferdaustranslatorpage\FerdausTranslatorPageApplication.class
+com\adam\zakar\ferdaustranslatorpage\controller\InquiryController.class
+com\adam\zakar\ferdaustranslatorpage\service\WelcomeService.class
+com\adam\zakar\ferdaustranslatorpage\service\GenericWelcomeService.class
+com\adam\zakar\ferdaustranslatorpage\controller\ContactController.class
+com\adam\zakar\ferdaustranslatorpage\controller\WelcomeController.class

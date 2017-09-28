@@ -24,8 +24,10 @@ import javax.mail.internet.MimeMessage;
  */
 @Service
 public class ContactServiceImpl implements ContactService {
-	
-    private static Logger LOG = LoggerFactory.getLogger(ContactServiceImpl.class);
+
+
+
+	private static Logger LOG = LoggerFactory.getLogger(ContactServiceImpl.class);
 	private final String emailUserName="EMAILUSERNAME"; 
 	private final String passEnvVariableName="EMAILPASS";
 	private final ResourceBundle configuration= ResourceBundle.getBundle("configuration");

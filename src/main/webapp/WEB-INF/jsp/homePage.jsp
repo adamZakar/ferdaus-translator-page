@@ -9,119 +9,7 @@
 </c:if>
 <c:set var="path" value="${pageContext.request.contextPath}"/>;
 
-<!DOCTYPE html>
-<html class="no-js">
-<head>
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>Timer Agency Template</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <!-- Mobile Specific Metas
-    ================================================== -->
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Template CSS Files
-    ================================================== -->
-    <!-- Twitter Bootstrs CSS -->
-    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-    <!-- Ionicons Fonts Css -->
-    <link rel="stylesheet" href="/resources/css/ionicons.min.css">
-    <!-- animate css -->
-    <link rel="stylesheet" href="/resources/css/animate.css">
-    <!-- Hero area slider css-->
-    <link rel="stylesheet" href="/resources/css/slider.css">
-    <!-- owl craousel css -->
-    <link rel="stylesheet" href="/resources/css/owl.carousel.css">
-    <link rel="stylesheet" href="/resources/css/owl.theme.css">
-    <link rel="stylesheet" href="/resources/css/jquery.fancybox.css">
-    <!-- template main css file -->
-    <link rel="stylesheet" href="/resources/css/main.css">
-    <!-- responsive css -->
-    <link rel="stylesheet" href="/resources/css/responsive.css">
-
-    <!-- Template Javascript Files
-    ================================================== -->
-    <!-- modernizr js -->
-    <script src="/resources/js/vendor/modernizr-2.6.2.min.js"></script>
-    <!-- jquery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- owl carouserl js -->
-    <script src="/resources/js/owl.carousel.min.js"></script>
-    <!-- bootstrap js -->
-
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <!-- wow js -->
-    <script src="/resources/js/wow.min.js"></script>
-    <!-- slider js -->
-    <script src="/resources/js/slider.js"></script>
-    <script src="/resources/js/jquery.fancybox.js"></script>
-    <!-- template main js -->
-    <script src="/resources/js/main.js"></script>
-</head>
-<body>
-<!--
-==================================================
-Header Section Start
-================================================== -->
-<header id="top-bar" class="navbar-fixed-top animated-header">
-    <div class="container">
-        <div class="navbar-header">
-            <!-- responsive nav button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- /responsive nav button -->
-
-            <!-- logo -->
-            <div class="navbar-brand">
-                <a href="index.html" >
-                    <img src="/resources/images/logo.png" alt="">
-                </a>
-            </div>
-            <!-- /logo -->
-        </div>
-        <!-- main menu -->
-        <nav class="collapse navbar-collapse navbar-right" role="navigation">
-            <div class="main-menu">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><c:out value="${languages}"></c:out> <span class="caret"></span></a>
-                        <div class="dropdown-menu">
-                            <ul>
-                                <li><a href="${path}/home"> <img src="resources/images/hu.jpg" width=20px"/> MAGYAR </a></li>
-                                <li><a href="${path}/home?lang=en"> <img src="resources/images/en.jpg" width=20px/> ENGLISH </a></li>
-                                <li><a href="${path}/home?lang=pa"> <img src="resources/images/pa.jpg" width=20px/> PASTU </a></li>
-                                <li><a href="${path}/home?lang=pe"> <img src="resources/images/pe.jpg" width=20px/> PERSIAN </a></li>
-                                <li><a href="${path}/home?lang=ur"> <img src="resources/images/ur.jpg" width=20px/> URDU </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="${path}/home${lang}"> <c:out value="${home}"></c:out> </a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><c:out value="${services}"></c:out> <span class="caret"></span></a>
-                        <div class="dropdown-menu">
-                            <ul>
-                                <li><a href="${path}/translation${lang}"> <c:out value="${translation}"></c:out> </a></li>
-                                <li><a href="${path}/interpretition${lang}"><c:out value="${interpretition}"></c:out></a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="${path}/contact${lang}"><c:out value="${contact}"></c:out></a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- /main nav -->
-    </div>
-</header>
+<%@ include file="common/header.jspf" %>
 
 <!--
 ==================================================
@@ -177,7 +65,7 @@ Slider Section Start
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                    <img src="/resources/images/about/about.jpg" alt="">
+                    <img src="${resources}images/about/about.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -199,7 +87,7 @@ Portfolio Section Start
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                     <div class="img-wrapper">
-                        <img src="/resources/images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" >
+                        <img src="${resources}images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" >
                         <div class="overlay">
                             <div class="buttons">
                                 <a rel="gallery" class="fancybox" href="images/portfolio/item-1.jpg">Demo</a>
@@ -222,7 +110,7 @@ Portfolio Section Start
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                     <div class="img-wrapper">
-                        <img src="/resources/images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" >
+                        <img src="${resources}images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" >
                         <div class="overlay">
                             <div class="buttons">
                                 <a rel="gallery" class="fancybox" href="images/portfolio/item-2.jpg">Demo</a>
@@ -245,7 +133,7 @@ Portfolio Section Start
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                     <div class="img-wrapper">
-                        <img src="/resources/images/portfolio/item-3.jpg" class="img-responsive" alt="" >
+                        <img src="${resources}images/portfolio/item-3.jpg" class="img-responsive" alt="" >
                         <div class="overlay">
                             <div class="buttons">
                                 <a rel="gallery" class="fancybox" href="images/portfolio/item-3.jpg">Demo</a>
@@ -268,7 +156,7 @@ Portfolio Section Start
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
                     <div class="img-wrapper">
-                        <img src="/resources/images/portfolio/item-4.jpg" class="img-responsive" alt="" >
+                        <img src="${resources}images/portfolio/item-4.jpg" class="img-responsive" alt="" >
                         <div class="overlay">
                             <div class="buttons">
                                 <a rel="gallery" class="fancybox" href="images/portfolio/item-4.jpg">Demo</a>
@@ -291,7 +179,7 @@ Portfolio Section Start
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
                     <div class="img-wrapper">
-                        <img src="/resources/images/portfolio/item-5.jpg" class="img-responsive" alt="" >
+                        <img src="${resources}images/portfolio/item-5.jpg" class="img-responsive" alt="" >
                         <div class="overlay">
                             <div class="buttons">
                                 <a rel="gallery" class="fancybox" href="images/portfolio/item-5.jpg">Demo</a>
@@ -314,7 +202,7 @@ Portfolio Section Start
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                     <div class="img-wrapper">
-                        <img src="/resources/images/portfolio/item-6.jpg" class="img-responsive" alt="" >
+                        <img src="${resources}images/portfolio/item-6.jpg" class="img-responsive" alt="" >
                         <div class="overlay">
                             <div class="buttons">
                                 <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Demo</a>
