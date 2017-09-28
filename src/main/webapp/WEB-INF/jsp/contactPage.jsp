@@ -48,7 +48,7 @@
                         consectetur adipisicing elit. Dolore, ea!
                     </p>
                     <div class="contact-form">
-                        <form id="contact-form" onsubmit="return onsub()">
+                        <form id="contact-form" onsubmit="return onsub()" method="post">
 
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
                                 <input type="text" placeholder="Your Name" class="form-control" name="name" id="name" >
@@ -68,7 +68,7 @@
 
 
                             <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
-                                <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Send Message">
+                                <input type="button" onclick="collectdata()" id="contact-submit" class="btn btn-default btn-send" value="Send Message">
                             </div>
                         </form>
                     </div>
