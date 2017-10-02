@@ -65,7 +65,6 @@
     <script src="/js/jquery.fancybox.js"></script>
     <!-- template main js -->
     <script src="/js/main.js"></script>
-    <script src="/js/contact.js"></script>
 </head>
 <body>
 <!--
@@ -86,7 +85,7 @@ Header Section Start
 
             <!-- logo -->
             <div class="navbar-brand">
-                <a href="index.html" >
+                <a href="/home${lang}" >
                     <img src="${resources}images/logo.png" alt="">
                 </a>
             </div>

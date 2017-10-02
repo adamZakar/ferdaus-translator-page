@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.adam.zakar.ferdaustranslatorpage.service.GenericWelcomeService;
+import com.adam.zakar.ferdaustranslatorpage.service.WelcomePage.GenericWelcomeService;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -46,12 +46,7 @@ public class WelcomeController {
         return "translationPage";
     }
 
-    @RequestMapping(value = "/interpretition")
-    public String getInterpretitionPage(@RequestParam(value = "lang",required =false) String lang, Model model) {
-        LOG.info("Contact has been called param:" +lang);
-        model.addAllAttributes(Dictionary.getPageTexts("contact",lang));
-        return "interpretitionPage";
-    }
+
 
 
 

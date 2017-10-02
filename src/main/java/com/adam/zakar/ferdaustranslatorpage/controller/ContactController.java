@@ -1,10 +1,8 @@
 package com.adam.zakar.ferdaustranslatorpage.controller;
 
-import com.adam.zakar.ferdaustranslatorpage.service.ContactImpl;
-import com.adam.zakar.ferdaustranslatorpage.service.ContactService;
+import com.adam.zakar.ferdaustranslatorpage.service.ContactPage.ContactImpl;
+import com.adam.zakar.ferdaustranslatorpage.service.ContactPage.ContactService;
 import com.adam.zakar.ferdaustranslatorpage.service.Dictionary;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,11 +22,8 @@ public class ContactController {
     private ContactService contactService;
 
 
-    private static Logger LOG = LoggerFactory.getLogger(ContactController.class);
-
     @RequestMapping
     public String getContactPage(@RequestParam(value = "lang",required =false) String lang, Model model) {
-        LOG.info("Contact has been called param:" +lang);
         model.addAllAttributes(Dictionary.getPageTexts("contact",lang));
         return "contactPage";
     }
@@ -36,15 +31,17 @@ public class ContactController {
 
 
     @RequestMapping(value = "/submitContact", method = RequestMethod.POST)
-    public @ResponseBody String addNewWork(@Valid ContactImpl contact, BindingResult result, @RequestParam(value="lang", required = false) String lang) {
+    public @ResponseBody String[] addNewWork(@Valid ContactImpl contact, BindingResult result, @RequestParam(value="lang", required = false) String lang) {
         if (result.hasErrors()) {
-            return result.getFieldErrors().get(0).getDefaultMessage();
+            return new String[]{"fail", result.getFieldErrors().get(0).getDefaultMessage()};
         }
 
+
+        System.out.println(lang);
         if (contactService.contactRequestHandler(contact, lang)) {
-            return "success";
+            return new String[]{"success", Dictionary.getText("sent",lang)};
         }
-        return "Problem has occured please try again later";
+        return new String[]{"fail", Dictionary.getText("problem_occured",lang)};
     }
 
 }

@@ -14,8 +14,8 @@ public class Dictionary {
 
     private static ResourceBundle setResourceBundle(String lang) {
         ResourceBundle resourceBundle=null;
-        if (lang == null) {
-            resourceBundle = ResourceBundle.getBundle(DICTIONARY);
+        if (lang == null || lang=="hu") {
+            resourceBundle = ResourceBundle.getBundle(DICTIONARY,new Locale("hu","HU"));
             return resourceBundle;
         }
 

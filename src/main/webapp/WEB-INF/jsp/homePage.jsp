@@ -374,6 +374,6 @@ Footer Section Start
         </div>
     </div>
 </footer> <!-- /#footer -->
-
+    <script src="/js/interpretition.js"></script>
 </body>
 </html>

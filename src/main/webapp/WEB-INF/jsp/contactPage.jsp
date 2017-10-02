@@ -65,7 +65,9 @@
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
                                 <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
                             </div>
-
+                            <div class="alert alert-warning" id="error" style="display: none">
+                                <strong></strong>
+                            </div>
 
                             <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
                                 <input type="button" onclick="collectdata()" id="contact-submit" class="btn btn-default btn-send" value="Send Message">
@@ -180,6 +182,7 @@
     </div>
 </footer> <!-- /#footer -->
 
+    <script src="/js/contactScript.js"></script>
 </body>
 </html>
 
