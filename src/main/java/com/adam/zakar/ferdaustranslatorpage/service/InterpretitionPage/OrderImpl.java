@@ -1,5 +1,6 @@
 package com.adam.zakar.ferdaustranslatorpage.service.InterpretitionPage;
 
+import com.adam.zakar.ferdaustranslatorpage.service.Languages;
 import org.hibernate.validator.constraints.Email;
 
 import javax.validation.constraints.NotNull;
@@ -15,10 +16,9 @@ public class OrderImpl implements Order {
     @Email
     private String email;
 
-    @Size(max=3,min=3)
-    private String firstLanguage;
-    @Size(max=3,min=3)
-    private String secondLanguage;
+
+    private Languages firstLanguage;
+    private Languages secondLanguage;
 
     private String description;
     private String file;
@@ -44,23 +44,23 @@ public class OrderImpl implements Order {
     }
 
     @Override
-    public String getFirstLanguage() {
+    public Languages getFirstLanguage() {
         return firstLanguage;
     }
 
     @Override
     public void setFirstLanguage(String firstLanguage) {
-        this.firstLanguage = firstLanguage;
+       this.firstLanguage= Languages.valueOf(firstLanguage);
     }
 
     @Override
-    public String getSecondLanguage() {
+    public Languages getSecondLanguage() {
         return secondLanguage;
     }
 
     @Override
     public void setSecondLanguage(String secondLanguage) {
-        this.secondLanguage = secondLanguage;
+      this.secondLanguage=Languages.valueOf(secondLanguage);
     }
 
     @Override

@@ -36,8 +36,18 @@ public class Dictionary {
         return resourceBundle;
     }
 
+    private static ResourceBundle setResourceBundle(Languages lang) {
+        ResourceBundle resourceBundle=null;
+        if (lang == null) {
+            resourceBundle = ResourceBundle.getBundle(DICTIONARY,new Locale("hu","HU"));
+            return resourceBundle;
+        }
 
-    public static Map<String, String> getPageTexts(String page, String lang) {
+                resourceBundle = ResourceBundle.getBundle(DICTIONARY, new Locale(lang.getLocale(), lang.getCountry()));
+        return resourceBundle;
+    }
+
+    public static Map<String, String> getPageTexts(String page, Languages lang) {
       ResourceBundle  resourceBundle = setResourceBundle(lang);
         Set<String> keys = resourceBundle.keySet();
         Map<String, String> innerTexts = new HashMap();
@@ -52,7 +62,7 @@ public class Dictionary {
     }
 
 
-    public static String getText(String key, String lang){
+    public static String getText(String key, Languages lang){
         return setResourceBundle(lang).getString(key);
     }
 

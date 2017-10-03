@@ -3,6 +3,7 @@ package com.adam.zakar.ferdaustranslatorpage.controller;
 import com.adam.zakar.ferdaustranslatorpage.service.Dictionary;
 import com.adam.zakar.ferdaustranslatorpage.service.InterpretitionPage.InterpretitionService;
 import com.adam.zakar.ferdaustranslatorpage.service.InterpretitionPage.Order;
+import com.adam.zakar.ferdaustranslatorpage.service.Languages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,14 +21,14 @@ public class InterpretitionController {
 
 
     @RequestMapping
-    public String getInterpretitionPage(@RequestParam(value = "lang",required =false) String lang, Model model) {
+    public String getInterpretitionPage(@RequestParam(value = "lang",required =false) Languages lang, Model model) {
         model.addAllAttributes(Dictionary.getPageTexts("interpretition",lang));
         return "interpretitionPage";
     }
 
     @RequestMapping("/order")
-    public @ResponseBody String getOrder(@RequestBody Order order, @RequestParam(value = "lang",required =false) String lang, Model model) {
-        interpretitionService.orderHandler(order, lang);
+    public @ResponseBody String getOrder(@RequestBody Order order, @RequestParam(value = "lang",required =false) Languages languages, Model model) {
+        interpretitionService.orderHandler(order, languages);
         return "interpretitionPage";
     }
 

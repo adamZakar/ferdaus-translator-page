@@ -1,5 +1,7 @@
 package com.adam.zakar.ferdaustranslatorpage.service.InterpretitionPage;
 
+import com.adam.zakar.ferdaustranslatorpage.service.Languages;
+
 public interface Order {
 
      String getName();
@@ -10,11 +12,11 @@ public interface Order {
 
      void setEmail(String email);
 
-    String getFirstLanguage();
+    Languages getFirstLanguage();
 
     void setFirstLanguage(String firstLanguage);
 
-    String getSecondLanguage();
+    Languages getSecondLanguage();
 
     void setSecondLanguage(String secondLanguage);
 

@@ -3,6 +3,7 @@ package com.adam.zakar.ferdaustranslatorpage.controller;
 import com.adam.zakar.ferdaustranslatorpage.service.ContactPage.ContactImpl;
 import com.adam.zakar.ferdaustranslatorpage.service.ContactPage.ContactService;
 import com.adam.zakar.ferdaustranslatorpage.service.Dictionary;
+import com.adam.zakar.ferdaustranslatorpage.service.Languages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class ContactController {
 
 
     @RequestMapping
-    public String getContactPage(@RequestParam(value = "lang",required =false) String lang, Model model) {
+    public String getContactPage(@RequestParam(value = "lang",required =false) Languages lang, Model model) {
         model.addAllAttributes(Dictionary.getPageTexts("contact",lang));
         return "contactPage";
     }
@@ -31,7 +32,7 @@ public class ContactController {
 
 
     @RequestMapping(value = "/submitContact", method = RequestMethod.POST)
-    public @ResponseBody String[] addNewWork(@Valid ContactImpl contact, BindingResult result, @RequestParam(value="lang", required = false) String lang) {
+    public @ResponseBody String[] addNewWork(@Valid ContactImpl contact, BindingResult result, @RequestParam(value="lang", required = false) Languages lang) {
         if (result.hasErrors()) {
             return new String[]{"fail", result.getFieldErrors().get(0).getDefaultMessage()};
         }

@@ -1,5 +1,8 @@
 package com.adam.zakar.ferdaustranslatorpage.persictence.Entities;
 
+import com.adam.zakar.ferdaustranslatorpage.service.ContactPage.Contact;
+import com.adam.zakar.ferdaustranslatorpage.service.Languages;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,7 +19,7 @@ public class ContactEntity {
     private int id;
 
 
-    private Date received;
+    private LocalDateTime received;
 
     private String name;
 
@@ -29,13 +32,33 @@ public class ContactEntity {
     public ContactEntity() {
     }
 
+    private Languages languages;
 
-    public ContactEntity(String name, String email, String subject, String message) {
+    public Languages getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(Languages languages) {
+        this.languages = languages;
+    }
+
+    public ContactEntity(Contact contact, Languages language) {
+        this.name = contact.getName();
+        this.email = contact.getEmail();
+        this.subject = contact.getSubject();
+        this.message = contact.getMessage();
+        this.languages=language;
+        received= LocalDateTime.now();
+    }
+
+
+    public ContactEntity(String name, String email, String subject, String message,Languages language) {
         this.name = name;
         this.email = email;
         this.subject = subject;
         this.message = message;
-        received= new Date();
+        this.languages=language;
+        received= LocalDateTime.now();
     }
 
     public int getId() {
@@ -64,7 +87,7 @@ public class ContactEntity {
         return message;
     }
 
-    public Date getReceived() {
+    public LocalDateTime getReceived() {
         return received;
     }
 
