@@ -36,8 +36,6 @@ public class ContactController {
             return new String[]{"fail", result.getFieldErrors().get(0).getDefaultMessage()};
         }
 
-
-        System.out.println(lang);
         if (contactService.contactRequestHandler(contact, lang)) {
             return new String[]{"success", Dictionary.getText("sent",lang)};
         }

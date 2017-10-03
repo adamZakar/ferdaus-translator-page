@@ -1,5 +1,6 @@
 package com.adam.zakar.ferdaustranslatorpage.service.ContactPage;
 
+import com.adam.zakar.ferdaustranslatorpage.persictence.DAO.ContactDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -19,6 +20,9 @@ public class ContactServiceImpl implements ContactService {
     @Autowired
     private JavaMailSender sender;
 
+    @Autowired
+    private ContactDAO contactDAO;
+
     private final String emailUserName = "EMAILUSERNAME";
     private final String passEnvVariableName = "EMAILPASS";
     private final ResourceBundle configuration = ResourceBundle.getBundle("configuration");
@@ -27,7 +31,8 @@ public class ContactServiceImpl implements ContactService {
     @Override
     public boolean contactRequestHandler(Contact contact, String lang) {
         List<String> adresses = setAdresses(contact.getEmail());
-        return sendEmail(adresses, contact, lang);
+        contactDAO.insertContact(contact);
+        return true; //sendEmail(adresses, contact, lang);
     }
 
     private List<String> setAdresses(String email) {

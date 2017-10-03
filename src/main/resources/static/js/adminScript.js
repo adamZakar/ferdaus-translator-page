@@ -1,4 +1,4 @@
-﻿function collectdata() {
+﻿function requestData() {
 
     var objectOfInputData = {};
 

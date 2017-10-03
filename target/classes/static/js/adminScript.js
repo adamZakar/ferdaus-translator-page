@@ -1,4 +1,4 @@
-﻿function collectdata() {
+﻿function requestData() {
 
     var objectOfInputData = {};
 
@@ -8,7 +8,7 @@
     objectOfInputData.subject = document.getElementById("subject").value;
     objectOfInputData.message= document.getElementById("message").value;
 
-    jQuery.post("contact/submitContact", ContactParser, function (res) {
+    jQuery.post("contact/submitContact", objectOfInputData, function (res) {
         console.log(res);
         aftervalidate(res);
     });

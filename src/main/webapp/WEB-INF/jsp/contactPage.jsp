@@ -49,6 +49,9 @@
                     </p>
                     <div class="contact-form">
                         <form id="contact-form" onsubmit="return onsub()" method="post">
+                            <div>
+                            <strong id="responsePlace"> </strong>
+                            </div>
 
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
                                 <input type="text" placeholder="Your Name" class="form-control" name="name" id="name" >
@@ -182,7 +185,7 @@
     </div>
 </footer> <!-- /#footer -->
 
-    <script src="/js/contactScript.js"></script>
+    <script src="/js/contact.js"></script>
 </body>
 </html>
 

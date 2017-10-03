@@ -110,22 +110,25 @@
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s" >
                                 <input type="email" placeholder="${email}" class="form-control" name="email" id="email" >
                             </div>
-                            <div>
-                           <select name="firstLanguage" class="selectpicker" id="firstLanguage">
-                             <option value="hun">${hun}</option>
-                             <option value="eng">${eng}</option>
-                             <option value="pas">${pas}</option>
-                             <option value="urd">${urd}</option>
-                             <option value="per">${per}</option>
-                           </select>
-
-                             <select name="secondLanguage" class="selectpicker" id="secondLanguage">
-                               <option value="hun">${hun}</option>
-                               <option value="eng">${eng}</option>
-                               <option value="pas">${pas}</option>
-                               <option value="urd">${urd}</option>
-                               <option value="per">${per}</option>
-                             </select>
+                            <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s" >
+                            <div class="form-group col-sm-4>
+                                 <select name="firstLanguage" class="selectpicker" id="firstLanguage">
+                                     <option value="hun">${hun}</option>
+                                     <option value="eng">${eng}</option>
+                                     <option value="pas">${pas}</option>
+                                     <option value="urd">${urd}</option>
+                                     <option value="per">${per}</option>
+                                   </select>
+                                </div>
+                                    <div class="form-group col-sm-4>
+                                    <select name="secondLanguage" class="selectpicker" id="secondLanguage">
+                                         <option value="hun">${hun}</option>
+                                        <option value="eng">${eng}</option>
+                                        <option value="pas">${pas}</option>
+                                        <option value="urd">${urd}</option>
+                                        <option value="per">${per}</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
                                 <textarea rows="6" placeholder="${description}" class="form-control" name="message" id="message"></textarea>
