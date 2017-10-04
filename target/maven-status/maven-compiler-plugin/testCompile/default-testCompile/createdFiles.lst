@@ -1,0 +1,6 @@
+com\adam\zakar\ferdaustranslatorpage\welcome\ContactControllerTest.class
+com\adam\zakar\ferdaustranslatorpage\LanguagesTest.class
+com\adam\zakar\ferdaustranslatorpage\service\DictionaryTest.class
+com\adam\zakar\ferdaustranslatorpage\service\ContactImpTest.class
+com\adam\zakar\ferdaustranslatorpage\FerdausTranslatorPageApplicationTests.class
+com\adam\zakar\ferdaustranslatorpage\service\ContactServiceImplTest.class
