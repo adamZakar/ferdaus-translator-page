@@ -11,17 +11,17 @@ public class DictionaryTest {
     public void testgetText(){
         assertEquals("FORDÍTÓ", Dictionary.getText("home.translator",null));
         assertEquals("SZOLGÁLTATÁSOK", Dictionary.getText("all.services",null));
-        assertEquals("TRANSLATOR", Dictionary.getText("home.translator","en"));
-        assertEquals("SERVICES", Dictionary.getText("all.services", "en"));
+        assertEquals("TRANSLATOR", Dictionary.getText("home.translator",Languages.ENG));
+        assertEquals("SERVICES", Dictionary.getText("all.services", Languages.ENG));
     }
 
     @Test
     public void testGetPageTest(){
-        assertEquals(Dictionary.getPageTexts("home","hu").size()
-                ,Dictionary.getPageTexts("home","en").size());
-        assertTrue(Dictionary.getPageTexts("home","en").containsKey("inquiry"));
-        assertTrue(Dictionary.getPageTexts("home","hu").containsKey("about_me"));
-        assertEquals("ABOUT ME",Dictionary.getPageTexts("home","en").get("about_me"));
-        assertEquals("RÓLAM",Dictionary.getPageTexts("home","hu").get("about_me"));
+        assertEquals(Dictionary.getPageTexts("home",Languages.HUN).size()
+                ,Dictionary.getPageTexts("home",Languages.ENG).size());
+        assertTrue(Dictionary.getPageTexts("home",Languages.ENG).containsKey("inquiry"));
+        assertTrue(Dictionary.getPageTexts("home",Languages.HUN).containsKey("about_me"));
+        assertEquals("ABOUT ME",Dictionary.getPageTexts("home",Languages.ENG).get("about_me"));
+        assertEquals("RÓLAM",Dictionary.getPageTexts("home",Languages.HUN).get("about_me"));
     }
 }

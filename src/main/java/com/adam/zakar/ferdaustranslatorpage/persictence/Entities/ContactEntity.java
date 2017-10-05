@@ -3,10 +3,7 @@ package com.adam.zakar.ferdaustranslatorpage.persictence.Entities;
 import com.adam.zakar.ferdaustranslatorpage.service.ContactPage.Contact;
 import com.adam.zakar.ferdaustranslatorpage.service.Languages;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -19,7 +16,7 @@ public class ContactEntity {
     private int id;
 
 
-    private LocalDateTime received;
+    private Date received;
 
     private String name;
 
@@ -32,14 +29,14 @@ public class ContactEntity {
     public ContactEntity() {
     }
 
-    private Languages languages;
+    private Languages language;
 
     public Languages getLanguages() {
-        return languages;
+        return language;
     }
 
     public void setLanguages(Languages languages) {
-        this.languages = languages;
+        this.language = languages;
     }
 
     public ContactEntity(Contact contact, Languages language) {
@@ -47,8 +44,8 @@ public class ContactEntity {
         this.email = contact.getEmail();
         this.subject = contact.getSubject();
         this.message = contact.getMessage();
-        this.languages=language;
-        received= LocalDateTime.now();
+        this.language=language;
+        received= new Date();
     }
 
 
@@ -57,8 +54,8 @@ public class ContactEntity {
         this.email = email;
         this.subject = subject;
         this.message = message;
-        this.languages=language;
-        received= LocalDateTime.now();
+        this.language=language;
+        received= new Date();
     }
 
     public int getId() {
@@ -87,7 +84,7 @@ public class ContactEntity {
         return message;
     }
 
-    public LocalDateTime getReceived() {
+    public Date getReceived() {
         return received;
     }
 

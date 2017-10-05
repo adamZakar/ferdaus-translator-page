@@ -111,8 +111,11 @@
                                 <input type="email" placeholder="${email}" class="form-control" name="email" id="email" >
                             </div>
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s" >
-                            <div class="form-group col-sm-4>
-                                 <select name="firstLanguage" class="selectpicker" id="firstLanguage">
+                                <div class="col-md-3">
+                                    Translate from:
+                                </div>
+                                <div class="col-md-3" >
+                                    <select name="firstLanguage" class="col-xs-3" id="firstLanguage">
                                      <option value="hun">${hun}</option>
                                      <option value="eng">${eng}</option>
                                      <option value="pas">${pas}</option>
@@ -120,32 +123,41 @@
                                      <option value="per">${per}</option>
                                    </select>
                                 </div>
-                                    <div class="form-group col-sm-4>
-                                    <select name="secondLanguage" class="selectpicker" id="secondLanguage">
-                                         <option value="hun">${hun}</option>
+                                <div class="col-md-3" >
+                                    to
+                                </div>
+                                <div class="col-md-3" >
+                                    <select name="secondLanguage" class="col-xs-3" id="secondLanguage">
+                                        <option value="hun">${hun}</option>
                                         <option value="eng">${eng}</option>
                                         <option value="pas">${pas}</option>
                                         <option value="urd">${urd}</option>
                                         <option value="per">${per}</option>
                                     </select>
-                                </div>
+                               </div>
                             </div>
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
                                 <textarea rows="6" placeholder="${description}" class="form-control" name="message" id="message"></textarea>
                             </div>
                             <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
-                                   <input type="file" name="fileToUpload" id="fileToUpload">
+                                 <label class="btn btn-default btn-file">
+                                    Browse
+                                     <input type="file" name="fileToUpload" id="fileToUpload" accept="*" style="display: none;" multiple>
+                                 </label>
                             </div>
-
                             <div class="alert alert-warning" id="error" style="display: none">
                                 <strong></strong>
                             </div>
-
                             <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
                                 <input type="button" onclick="collectdata()" id="contact-submit" class="btn btn-default btn-send" value="Send Message">
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-            </section>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</section>
+
+            <script src="/js/interpretition.js"></script>
+             <link rel="stylesheet" href="/css/draganddrop.css">

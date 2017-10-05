@@ -24,7 +24,8 @@ public class ContactController {
 
 
     @RequestMapping
-    public String getContactPage(@RequestParam(value = "lang",required =false) Languages lang, Model model) {
+    public String getContactPage(@RequestParam(value = "lang",required =false) String language, Model model) {
+        Languages lang= Languages.valueOf(language);
         model.addAllAttributes(Dictionary.getPageTexts("contact",lang));
         return "contactPage";
     }
@@ -32,15 +33,16 @@ public class ContactController {
 
 
     @RequestMapping(value = "/submitContact", method = RequestMethod.POST)
-    public @ResponseBody String[] addNewWork(@Valid ContactImpl contact, BindingResult result, @RequestParam(value="lang", required = false) Languages lang) {
+    public @ResponseBody String[] addNewWork(@Valid ContactImpl contact, BindingResult result) {
+
         if (result.hasErrors()) {
             return new String[]{"fail", result.getFieldErrors().get(0).getDefaultMessage()};
         }
 
-        if (contactService.contactRequestHandler(contact, lang)) {
-            return new String[]{"success", Dictionary.getText("sent",lang)};
+        if (contactService.contactRequestHandler(contact, contact.getLang())) {
+            return new String[]{"success", Dictionary.getText("sent",contact.getLang())};
         }
-        return new String[]{"fail", Dictionary.getText("problem_occured",lang)};
+        return new String[]{"fail", Dictionary.getText("problem_occured",contact.getLang())};
     }
 
 }

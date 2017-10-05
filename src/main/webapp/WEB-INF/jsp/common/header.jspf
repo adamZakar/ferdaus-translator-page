@@ -99,11 +99,11 @@ Header Section Start
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><c:out value="${languages}"></c:out> <span class="caret"></span></a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a href="${path}/contact"> <img src="${resources}images/hu.jpg" width=20px"/> MAGYAR </a></li>
-                                <li><a href="${path}/contact?lang=en"> <img src="${resources}images/en.jpg" width=20px/> ENGLISH </a></li>
-                                <li><a href="${path}/contact?lang=pa"> <img src="${resources}images/pa.jpg" width=20px/> PASTU </a></li>
-                                <li><a href="${path}/contact?lang=pe"> <img src="${resources}images/pe.jpg" width=20px/> PERSIAN </a></li>
-                                <li><a href="${path}/contact?lang=ur"> <img src="${resources}images/ur.jpg" width=20px/> URDU </a></li>
+                                <li><a href="${path}/contact?lang=HUN"> <img src="${resources}images/hu.jpg" width=20px"/> MAGYAR </a></li>
+                                <li><a href="${path}/contact?lang=ENG"> <img src="${resources}images/en.jpg" width=20px/> ENGLISH </a></li>
+                                <li><a href="${path}/contact?lang=PAR"> <img src="${resources}images/pa.jpg" width=20px/> PASTU </a></li>
+                                <li><a href="${path}/contact?lang=PER"> <img src="${resources}images/pe.jpg" width=20px/> PERSIAN </a></li>
+                                <li><a href="${path}/contact?lang=URD"> <img src="${resources}images/ur.jpg" width=20px/> URDU </a></li>
                             </ul>
                         </div>
                     </li>

@@ -24,7 +24,8 @@ public class WelcomeController {
     private GenericWelcomeService welcomeService;
 
     @RequestMapping(value = "/home")
-    public String getWelcomPage(@RequestParam(value = "lang",required =false) Languages lang, Model model) {
+    public String getWelcomPage(@RequestParam(value = "lang") String language, Model model) {
+        Languages lang=Languages.valueOf(language);
         LOG.info("Home has been called param:" +lang);
         model.addAllAttributes(Dictionary.getPageTexts("home",lang));
         return "homePage";
@@ -32,7 +33,8 @@ public class WelcomeController {
 
 
     @RequestMapping(value = "/")
-    public String doWelcomPage(@RequestParam(value = "lang",required =false) Languages lang, Model model) {
+    public String doWelcomPage(@RequestParam(value = "lang",required =false) String language, Model model) {
+        Languages lang=Languages.valueOf(language);
         LOG.info("Home has been called param:" +lang);
         model.addAllAttributes(Dictionary.getPageTexts("home",lang));
         return "homePage";
@@ -41,7 +43,8 @@ public class WelcomeController {
 
 
     @RequestMapping(value = "/translation")
-    public String getTranslationPage(@RequestParam(value = "lang",required =false) Languages lang, Model model) {
+    public String getTranslationPage(@RequestParam(value = "lang",required =false) String language, Model model) {
+        Languages lang=Languages.valueOf(language);
         LOG.info("Contact has been called param:" +lang);
         model.addAllAttributes(Dictionary.getPageTexts("contact",lang));
         return "translationPage";

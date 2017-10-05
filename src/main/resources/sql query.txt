@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `ferdaus`.`contact` (
   `email` VARCHAR(45) NOT NULL,
   `subject` NVARCHAR(100) NOT NULL,
   `message` NVARCHAR(1000) NOT NULL,
+  `language` VARCHAR(4) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

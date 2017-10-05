@@ -1,5 +1,7 @@
 package com.adam.zakar.ferdaustranslatorpage.service.ContactPage;
 
+import com.adam.zakar.ferdaustranslatorpage.service.Languages;
+
 /**
  * Created by Ádám on 2017. 09. 28..
  */
@@ -21,5 +23,8 @@ public interface Contact {
 
     void setMessage(String message);
 
+    Languages getLang();
+
+    void setLang(String lang);
 
 }

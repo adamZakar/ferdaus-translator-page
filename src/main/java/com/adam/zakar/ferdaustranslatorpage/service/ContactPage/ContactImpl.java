@@ -1,5 +1,6 @@
 package com.adam.zakar.ferdaustranslatorpage.service.ContactPage;
 
+import com.adam.zakar.ferdaustranslatorpage.service.Languages;
 import org.hibernate.validator.constraints.Email;
 
 import javax.validation.constraints.Size;
@@ -17,6 +18,17 @@ public class ContactImpl implements Contact{
 
     @Size(min = 3, message = "Please write longer description")
     private String message;
+
+    public Languages getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = Languages.valueOf(lang);
+    }
+
+    private Languages lang;
+
 
     public ContactImpl() {
     }
