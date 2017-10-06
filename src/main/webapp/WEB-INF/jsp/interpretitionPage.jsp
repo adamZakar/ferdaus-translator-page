@@ -159,5 +159,5 @@
      </div>
 </section>
 
-            <script src="/js/interpretition.js"></script>
+            <script src="/js/interpretitionPage.js"></script>
              <link rel="stylesheet" href="/css/draganddrop.css">

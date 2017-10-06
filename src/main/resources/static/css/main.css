@@ -122,6 +122,21 @@ a:hover {
   transition: .3s all;
   text-transform: uppercase;
 }
+
+.mainSelect {
+   font-size: 14px;
+   font-weight: 500;
+   border-bottom: 2px solid transparent;
+   -webkit-transition: .3s all;
+   -o-transition: .3s all;
+   transition: .3s all;
+   text-transform: uppercase;
+   margin-top:2px;
+   color: #444;
+
+}
+
+
 #top-bar .main-menu li a:hover {
   color: #02bdd5;
 }

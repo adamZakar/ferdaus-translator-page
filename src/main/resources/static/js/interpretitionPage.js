@@ -39,7 +39,7 @@ function aftervalidate(res) {
 
 
   $(document).ready(function() {
-      $("#js-upload-submit").on("click", uploadFile);
+      $("#fileToUpload").on("change", uploadFile);
     });
 
     /**
@@ -48,7 +48,7 @@ function aftervalidate(res) {
     function uploadFile() {
     $("contact-submit").prop('disabled', true);
     var inputFile= new FormData();
-    jQuery.each(jQuery('#js-upload-files')[0].files, function(i, file) {
+    jQuery.each(jQuery('#fileToUpload')[0].files, function(i, file) {
         inputFile.append('fileToUpload', file);
     });
       $.ajax({
@@ -71,42 +71,42 @@ function aftervalidate(res) {
       });
     }
 
-function($) {
-    'use strict';
-
-    // UPLOAD CLASS DEFINITION
-    // ======================
-
-    var dropZone = document.getElementById('drop-zone');
-    var uploadForm = document.getElementById('js-upload-form');
-
-    var startUpload = function(files) {
-        console.log(files)
-    }
-
-    uploadForm.addEventListener('submit', function(e) {
-        var uploadFiles = document.getElementById('js-upload-files').files;
-        e.preventDefault()
-
-        startUpload(uploadFiles)
-    })
-
-    dropZone.ondrop = function(e) {
-        e.preventDefault();
-        this.className = 'upload-drop-zone';
-
-        startUpload(e.dataTransfer.files)
-    }
-
-    dropZone.ondragover = function() {
-        this.className = 'upload-drop-zone drop';
-        return false;
-    }
-
-    dropZone.ondragleave = function() {
-        this.className = 'upload-drop-zone';
-        return false;
-    }
-
-}(jQuery);
-
+//function($) {
+//    'use strict';
+//
+//    // UPLOAD CLASS DEFINITION
+//    // ======================
+//
+//    var dropZone = document.getElementById('drop-zone');
+//    var uploadForm = document.getElementById('js-upload-form');
+//
+//    var startUpload = function(files) {
+//        console.log(files)
+//    }
+//
+//    uploadForm.addEventListener('submit', function(e) {
+//        var uploadFiles = document.getElementById('js-upload-files').files;
+//        e.preventDefault()
+//
+//        startUpload(uploadFiles)
+//    })
+//
+//    dropZone.ondrop = function(e) {
+//        e.preventDefault();
+//        this.className = 'upload-drop-zone';
+//
+//        startUpload(e.dataTransfer.files)
+//    }
+//
+//    dropZone.ondragover = function() {
+//        this.className = 'upload-drop-zone drop';
+//        return false;
+//    }
+//
+//    dropZone.ondragleave = function() {
+//        this.className = 'upload-drop-zone';
+//        return false;
+//    }
+//
+//}(jQuery);
+//

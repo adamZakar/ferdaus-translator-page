@@ -12,9 +12,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -28,10 +30,24 @@ public class InterpretitionController {
     InterpretitionService interpretitionService;
 
 
-    @RequestMapping
-    public String getInterpretitionPage(@RequestParam(value = "lang",required =false) String lang, Model model) {
+    @RequestMapping(method = RequestMethod.POST)
+    public String getInterpretitionPage(@RequestParam(value = "lang",required =false) String lang, ModelMap model, HttpSession session) {
         Languages language=Languages.valueOf(lang);
+        session.setAttribute("lang",lang);
+        LOG.info("Home has been called param:" + lang);
         model.addAllAttributes(Dictionary.getPageTexts("interpretition",language));
+        return "interpretitionPage";
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String getInterpretitionPage(ModelMap model, HttpSession session) {
+        Languages lang;
+        if (session.getAttribute("lang") != null) {
+            lang = (Languages) session.getAttribute("lang");
+        } else {
+            lang = Languages.valueOf("HUN");
+        }
+        model.addAllAttributes(Dictionary.getPageTexts("interpretition",lang));
         return "interpretitionPage";
     }
 
@@ -51,8 +67,8 @@ public class InterpretitionController {
 
     Logger LOG= LoggerFactory.getLogger(InterpretitionController.class);
 
-    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
     @ResponseBody
+    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
     public ResponseEntity<?> uploadFile(@RequestParam("fileToUpload") MultipartFile[] uploadfiles) {
 
         LOG.info("Uploadfile has benn called with "+uploadfiles.length+" number of elements.");
