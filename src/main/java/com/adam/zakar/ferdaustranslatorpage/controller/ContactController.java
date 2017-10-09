@@ -53,14 +53,15 @@ public class ContactController {
 
 
     @RequestMapping(value = "/submitContact", method = RequestMethod.POST)
-    public @ResponseBody String[] addNewWork(@Valid ContactImpl contact, BindingResult result) {
+    public @ResponseBody String[] addNewWork(@Valid ContactImpl contact, BindingResult result, HttpSession session) {
 
         if (result.hasErrors()) {
             return new String[]{"fail", result.getFieldErrors().get(0).getDefaultMessage()};
         }
 
         if (contactService.contactRequestHandler(contact, contact.getLang())) {
-            return new String[]{"success", Dictionary.getText("sent",contact.getLang())};
+            return new String[]{"success", Dictionary.getText("sent",(Languages) session.getAttribute("lang")),
+            Dictionary.getText("thanks",Languages.ENG)};
         }
         return new String[]{"fail", Dictionary.getText("problem_occured",contact.getLang())};
     }

@@ -19,7 +19,7 @@ public class AdminController {
     @RequestMapping
     public String getAdminPage(Model model){
         List<ContactEntity> contactEntities=contactDAO.retrieveContacts();
-        model.addAllAttributes(contactDAO.retrieveContacts());
+        model.addAttribute("contactEntities", contactDAO.retrieveContacts());
         return "adminPage";
     }
 

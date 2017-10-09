@@ -7,7 +7,7 @@
     objectOfInputData.email = document.getElementById("email").value;
     objectOfInputData.subject = document.getElementById("subject").value;
     objectOfInputData.message= document.getElementById("message").value;
-    objectOfInputData.lang=new URL(window.location.href).searchParams.get("lang");
+  //  objectOfInputData.lang=new URL(window.location.href).searchParams.get("lang"); session is used instead;
     jQuery.post("contact/submitContact", objectOfInputData, function (res) {
         console.log(res);
         aftervalidate(res);
@@ -23,7 +23,7 @@ if (res[0] == "success") {
         $(".form-control").hide();
         var button=document.getElementById("contact-submit");
         var responsePlace=document.getElementById("responsePlace");
-        responsePlace.innerText="Thanks for contacting us. We will reach you out soon!"
+        responsePlace.innerText=res[2];
         button.setAttribute("class","alert alert-success");
         button.value=res[1];
     }

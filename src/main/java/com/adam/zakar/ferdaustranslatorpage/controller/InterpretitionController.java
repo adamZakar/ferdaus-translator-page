@@ -20,6 +20,8 @@ import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URL;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @Controller
@@ -76,10 +78,12 @@ public class InterpretitionController {
         for(MultipartFile uploadfile:uploadfiles) {
             try {
                 // Get the filename and build the local file path
+                URL path= this.getClass().getClassLoader().getResource("");
+                LOG.info("Path is: "+path.toString());
                 String filename = uploadfile.getOriginalFilename();
                 String directory = "C:\\Users\\adzakar\\ownProject\\ferdaus-translator-page\\uploaded";
-                String filepath = Paths.get(directory, filename).toString();
-                File file = new File(filepath);
+                String filepath = Paths.get(path.toString(), filename).toUri().toString();
+                File file = new File(path.toString(),filename);
                 LOG.info("Saving  file to: " + file.getPath());
                 // Save the file locally
                 BufferedOutputStream stream =

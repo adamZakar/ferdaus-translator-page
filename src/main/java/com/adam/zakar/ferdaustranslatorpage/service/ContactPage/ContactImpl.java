@@ -16,7 +16,7 @@ public class ContactImpl implements Contact{
     @Size(min=3, message="Please write longer name")
     private String subject;
 
-    @Size(min = 3, message = "Please write longer description")
+    @Size(max = 5000, message = "Message is too long")
     private String message;
 
     public Languages getLang() {

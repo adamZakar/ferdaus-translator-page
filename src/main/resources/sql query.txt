@@ -20,14 +20,17 @@ USE `ferdaus` ;
 -- -----------------------------------------------------
 -- Table `ferdaus`.`contact`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `ferdaus`.`contact` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `received` timestamp NOT NULL,
   `name` NVARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `subject` NVARCHAR(100) NOT NULL,
-  `message` NVARCHAR(1000) NOT NULL,
-  `language` VARCHAR(4) NOT NULL,
+  `message` NVARCHAR(5000) NOT NULL,
+
+  `language` ENUM('HUN','ENG','PER','PAS','URD'),
+
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

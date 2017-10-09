@@ -33,6 +33,7 @@ public class ContactServiceImpl implements ContactService {
     public boolean contactRequestHandler(Contact contact, Languages lang) {
         List<String> adresses = setAdresses(contact.getEmail());
         contactDAO.insertContact(contact,lang);
+        sendEmail(adresses,contact,lang);
         return true; //sendEmail(adresses, contact, lang);
     }
 
@@ -43,7 +44,7 @@ public class ContactServiceImpl implements ContactService {
         return contacts;
     }
 
-    protected boolean sendEmail(List<String> addresses, Contact contact, String lang) {
+    protected boolean sendEmail(List<String> addresses, Contact contact, Languages lang) {
 
         MimeMessage message = sender.createMimeMessage();
 

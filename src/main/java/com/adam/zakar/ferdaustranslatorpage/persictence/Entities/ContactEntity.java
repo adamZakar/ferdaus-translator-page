@@ -24,6 +24,7 @@ public class ContactEntity {
 
     private String subject;
 
+
     private String message;
 
     public ContactEntity() {
@@ -88,6 +89,33 @@ public class ContactEntity {
         return received;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setReceived(Date received) {
+        this.received = received;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setLanguage(Languages language) {
+        this.language = language;
+    }
 
     @Override
     public String toString() {

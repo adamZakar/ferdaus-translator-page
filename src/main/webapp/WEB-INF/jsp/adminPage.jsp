@@ -1,11 +1,11 @@
 <%@ include file="common/header.jspf" %>
 
-<table>
+<section id="call-to-action">
+<div class="container">
+<table class="table table-striped">
+<caption>Request received</caption>
 <thead>
 <tr>
-<td>
-Request received
-</td>
 <td>
 From
 </td>
@@ -24,12 +24,22 @@ Message
 <c:forEach items="${contactEntities}" var="emp">
 <tr>
 <td>
-${emp.getReceived()}
+${emp.name}
+</td>
+<td>
+${emp.email}
+</td>
+<td>
+${emp.subject}
+</td>
+<td>
+${emp.message}
 </td>
 </tr>
 </c:forEach>
 </tbody>
 
 </table>
-
+</div>
+<section>
 <script src="/js/adminScript.js"
