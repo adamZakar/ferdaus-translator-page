@@ -6,6 +6,8 @@ import com.adam.zakar.ferdaustranslatorpage.service.Languages;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Entity
 @Table(name="contact")
